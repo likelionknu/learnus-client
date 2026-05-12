@@ -1,0 +1,198 @@
+@import "tailwindcss";
+/* 마크다운 스타일 */
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(html.dark, html.dark *));
+
+@theme {
+  --font-pretendard:
+    "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-intel-one-mono: "Intel One Mono", "SFMono-Regular", Menlo, monospace;
+  --tracking-ec-normal: -0.02em;
+  --tracking-ec-tight: -0.025em;
+  --leading-120: 120%;
+
+  --color-ec-black: var(--ec-black);
+  --color-ec-blue: var(--ec-blue);
+  --color-ec-white: var(--ec-white);
+  --color-ec-sub: var(--ec-sub);
+  --color-ec-box: var(--ec-box);
+  --color-ec-outline: var(--ec-outline);
+  --color-ec-table: var(--ec-table);
+  --color-ec-disable: var(--ec-disable);
+  --color-ec-red: var(--ec-red);
+  --color-ec-outline-dark: var(--ec-outline-dark);
+  --color-ec-gnb-white: var(--ec-gnb-white);
+  --color-ec-table-topic: var(--ec-table-topic);
+  --color-ec-table-header: var(--ec-table-header);
+  --color-ec-gnb-unselected: var(--ec-gnb-unselected);
+  --color-ec-loading: var(--ec-loading);
+  --color-ec-pink-background: var(--ec-pink-background);
+  --color-ec-pink-item: var(--ec-pink-item);
+  --color-ec-blue-background: var(--ec-blue-background);
+  --color-ec-blue-item: var(--ec-blue-item);
+  --color-ec-orange-background: var(--ec-orange-background);
+  --color-ec-orange-item: var(--ec-orange-item);
+  --radius-ec-10: 10px;
+
+  --text-large-title: 32px;
+  --text-large-title--line-height: normal;
+  --text-large-title--letter-spacing: var(--tracking-ec-normal);
+  --text-large-title--font-weight: 600;
+
+  --text-title: 24px;
+  --text-title--line-height: normal;
+  --text-title--letter-spacing: var(--tracking-ec-normal);
+  --text-title--font-weight: 600;
+
+  --text-sub-title: 18px;
+  --text-sub-title--line-height: normal;
+  --text-sub-title--letter-spacing: var(--tracking-ec-normal);
+  --text-sub-title--font-weight: 500;
+
+  --text-body-1: 16px;
+  --text-body-1--line-height: normal;
+  --text-body-1--letter-spacing: var(--tracking-ec-normal);
+  --text-body-1--font-weight: 500;
+
+  --text-body-2: 14px;
+  --text-body-2--line-height: normal;
+  --text-body-2--letter-spacing: var(--tracking-ec-normal);
+  --text-body-2--font-weight: 500;
+
+  --text-caption: 12px;
+  --text-caption--line-height: normal;
+  --text-caption--letter-spacing: var(--tracking-ec-normal);
+  --text-caption--font-weight: 500;
+
+  --text-markdown-h1: 32px;
+  --text-markdown-h1--line-height: 40px;
+  --text-markdown-h1--letter-spacing: var(--tracking-ec-normal);
+  --text-markdown-h1--font-weight: 600;
+
+  --text-markdown-h2: 24px;
+  --text-markdown-h2--line-height: 35px;
+  --text-markdown-h2--letter-spacing: var(--tracking-ec-normal);
+  --text-markdown-h2--font-weight: 600;
+
+  --text-markdown-h3: 20px;
+  --text-markdown-h3--line-height: 35px;
+  --text-markdown-h3--letter-spacing: var(--tracking-ec-normal);
+  --text-markdown-h3--font-weight: 600;
+
+  --text-markdown-p: 16px;
+  --text-markdown-p--line-height: 30px;
+  --text-markdown-p--letter-spacing: var(--tracking-ec-normal);
+  --text-markdown-p--font-weight: 500;
+
+  --text-markdown-code: 14px;
+  --text-markdown-code--line-height: 20px;
+  --text-markdown-code--letter-spacing: var(--tracking-ec-normal);
+  --text-markdown-code--font-weight: 400;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  --ec-black: #17171b;
+  --ec-blue: #3d67c2;
+  --ec-white: #ffffff;
+  --ec-sub: #717171;
+  --ec-box: #fafafc;
+  --ec-outline: #f7f7f7;
+  --ec-table: #666666;
+  --ec-disable: #a9a9a9;
+  --ec-red: #ff0000;
+  --ec-outline-dark: #e4e4e4;
+  --ec-gnb-white: #ffffff;
+  --ec-table-topic: #9da0b3;
+  --ec-table-header: #f4f4fb;
+  --ec-gnb-unselected: #b0b0b0;
+  --ec-loading: #f0f0f0;
+  --ec-pink-background: #ffe0eb;
+  --ec-pink-item: #ff82ac;
+  --ec-blue-background: #e7edff;
+  --ec-blue-item: #396aff;
+  --ec-orange-background: #fff5d9;
+  --ec-orange-item: #ffbb38;
+}
+
+html.dark {
+  --ec-black: #fafaf8;
+  --ec-blue: #5c85e5;
+  --ec-white: #131313;
+  --ec-sub: #717171;
+  --ec-box: #1d1d1d;
+  --ec-outline: #323232;
+  --ec-table: #666666;
+  --ec-disable: #a9a9a9;
+  --ec-red: #ff6b6b;
+  --ec-outline-dark: #e4e4e4;
+  --ec-gnb-white: #c8c8c8;
+  --ec-table-topic: #9da0b3;
+  --ec-table-header: #1d1d1d;
+  --ec-gnb-unselected: #999999;
+  --ec-loading: #222222;
+  --ec-pink-background: #3a242b;
+  --ec-pink-item: #ff9ebd;
+  --ec-blue-background: #1e2a4a;
+  --ec-blue-item: #6d92ff;
+  --ec-orange-background: #332d1e;
+  --ec-orange-item: #ffc966;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply font-pretendard bg-ec-white text-ec-black;
+  }
+}
+
+@utility typo-large-title {
+  @apply font-pretendard text-large-title;
+}
+
+@utility typo-title {
+  @apply font-pretendard text-title;
+}
+
+@utility typo-sub-title {
+  @apply font-pretendard text-sub-title;
+}
+
+@utility typo-body-1 {
+  @apply font-pretendard text-body-1;
+}
+
+@utility typo-body-2 {
+  @apply font-pretendard text-body-2;
+}
+
+@utility typo-caption {
+  @apply font-pretendard text-caption;
+}
+
+@utility typo-markdown-h1 {
+  @apply font-pretendard text-markdown-h1;
+}
+
+@utility typo-markdown-h2 {
+  @apply font-pretendard text-markdown-h2;
+}
+
+@utility typo-markdown-h3 {
+  @apply font-pretendard text-markdown-h3;
+}
+
+@utility typo-markdown-p {
+  @apply font-pretendard text-markdown-p;
+}
+
+@utility typo-markdown-code {
+  @apply font-intel-one-mono text-markdown-code;
+}

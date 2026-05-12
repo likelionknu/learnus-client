@@ -1,0 +1,12 @@
+export { default as ErrorPage } from "./ErrorPage";
+export * from "./ErrorPage";
+export { default as MaintenancePage } from "./MaintenancePage";
+export * from "./MaintenancePage";
+export { default as PreparingPage } from "./PreparingPage";
+export * from "./PreparingPage";
+export { default as PrivacyPolicyPage } from "./PrivacyPolicyPage";
+export * from "./PrivacyPolicyPage";
+export { default as ScreenSizeErrorPage } from "./ScreenSizeErrorPage";
+export * from "./ScreenSizeErrorPage";
+export { default as TestPage } from "./TestPage";
+export * from "./TestPage";
