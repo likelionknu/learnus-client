@@ -18,7 +18,7 @@ function toAuthSession(response: LoginResponseData): AuthSession {
     name: response.name,
     role: response.role,
     accessToken: response.access_token,
-    // refreshToken: response.refresh_token,
+    refreshToken: response.refresh_token,
     profileUrl: response.profile_url,
   };
 }

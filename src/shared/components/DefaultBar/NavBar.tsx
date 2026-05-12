@@ -26,7 +26,7 @@ const NavItems = ({
 }: NavItemsProps) => {
   return (
     <div
-      className="group bg-ec-blue flex h-17 w-17 cursor-pointer items-center justify-center rounded-2xl duration-700 hover:bg-[#2D4F99]"
+      className="group bg-ec-black dark:bg-ec-white flex h-17 w-17 cursor-pointer items-center justify-center rounded-2xl duration-700 hover:bg-[#2D4F99]"
       onClick={onClick}
     >
       <div className="flex flex-col items-center gap-2.5">
@@ -58,12 +58,10 @@ const NavItems = ({
 const NavBar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const role = useAuthSessionStore((state) => state.session?.role);
   const userName = useAuthSessionStore((state) => state.session?.name);
   const profileUrl = useAuthSessionStore((state) => state.session?.profileUrl);
   const clearSession = useAuthSessionStore((state) => state.clearSession);
   const pathSegments = pathname.split("/").filter(Boolean);
-  const isAdmin = role?.toUpperCase() === "ADMIN";
 
   const isSessionSelected = pathname.startsWith("/user/sessions");
   const isGroupSelected = pathname.startsWith("/user/list");
@@ -78,7 +76,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="bg-ec-blue sticky top-0 flex h-screen min-h-screen w-21.5">
+    <div className="bg-ec-black dark:bg-ec-white sticky top-0 flex h-screen min-h-screen w-21.5">
       <div className="flex h-full w-full flex-col items-center justify-between px-2.25 pt-9.25 pb-10.75">
         <div className="flex h-105.5 w-full flex-col items-center gap-10">
           <img
@@ -118,15 +116,14 @@ const NavBar = () => {
               selected={isQuestionSelected}
               onClick={() => navigate("/user/questions")}
             />
-            {isAdmin && (
-              <NavItems
-                iconSrc={NavAdmin}
-                iconAlt="NavAdmin"
-                label="관리자"
-                selected={isAdminSelected}
-                onClick={() => navigate("/admin")}
-              />
-            )}
+
+            <NavItems
+              iconSrc={NavAdmin}
+              iconAlt="NavAdmin"
+              label="관리자"
+              selected={isAdminSelected}
+              onClick={() => navigate("/admin")}
+            />
           </div>
         </div>
         <div className="group relative flex w-17 flex-col items-center">

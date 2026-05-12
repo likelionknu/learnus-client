@@ -133,7 +133,7 @@ const AdminNotionPage = () => {
         <div className="flex w-full justify-between">
           <TitleSection title={`공지사항`} />
           <div
-            className="bg-ec-blue rounded-ec-10 flex h-9.5 w-30 cursor-pointer items-center justify-center"
+            className="bg-ec-black rounded-ec-10 flex h-9.5 w-30 cursor-pointer items-center justify-center"
             onClick={() => {
               navigate("upload");
             }}

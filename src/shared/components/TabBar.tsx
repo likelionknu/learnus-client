@@ -50,7 +50,7 @@ function TabBar({ items }: { items: TabItem[] }) {
                 className={({ isActive }) =>
                   `font-pretendard tracking-ec-normal text-[12px] leading-120 font-medium transition-colors md:text-[18px] ${
                     isActive
-                      ? "text-ec-blue font-semibold"
+                      ? "text-ec-black font-semibold dark:text-[#16302B]"
                       : "text-ec-black hover:text-ec-blue"
                   }`
                 }

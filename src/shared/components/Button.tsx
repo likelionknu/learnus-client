@@ -9,7 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const VariantClasses: Record<ButtonVariant, string> = {
-  primary: "bg-ec-blue",
+  primary: "bg-ec-black",
   danger: "bg-ec-red",
 };
 

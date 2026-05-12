@@ -4,7 +4,7 @@ type PersistedAuthState = {
   state?: {
     session?: {
       accessToken?: string;
-      // refreshToken?: string;
+      refreshToken?: string;
     } | null;
   } | null;
 };

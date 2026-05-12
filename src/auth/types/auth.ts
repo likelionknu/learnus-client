@@ -28,7 +28,7 @@ export interface AuthSession {
   name: string;
   role: UserRole;
   accessToken: string;
-  // refreshToken: string;
+  refreshToken: string;
   profileUrl: string;
 }
 
