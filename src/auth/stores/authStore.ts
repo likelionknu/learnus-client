@@ -35,6 +35,9 @@ export const useAuthSessionStore = create<AuthSessionState>()(
         set({ session: toAuthSession(response) });
       },
       clearSession: () => {
+        if (typeof window !== "undefined") {
+          window.localStorage.removeItem(AUTH_STORAGE_KEY);
+        }
         set({ session: null });
       },
       setHasHydrated: (hasHydrated) => {

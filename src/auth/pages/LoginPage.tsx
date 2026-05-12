@@ -23,11 +23,17 @@ const Input = ({ value, type, placeholder, onChange }: InputProps) => {
   );
 };
 
-const Button = ({ text, onClick }: { text: string; onClick: () => void }) => {
+const Button = ({
+  text,
+  type,
+}: {
+  text: string;
+  type: "submit" | "button";
+}) => {
   return (
     <button
+      type={type}
       className="bg-ec-black text-body-1 text-ec-white w-full cursor-pointer rounded-2xl py-3"
-      onClick={onClick}
     >
       {text}
     </button>
@@ -74,6 +80,11 @@ function LoginPage() {
     }
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    void hadndleLogin();
+  };
+
   return (
     <>
       <div className="mx-auto mt-40 max-w-110">
@@ -85,7 +96,7 @@ function LoginPage() {
           학술 동아리의 여정이 끊이지 않도록 함께해요.
         </p>
 
-        <div className="mt-10 flex flex-col gap-2">
+        <form className="mt-10 flex flex-col gap-2" onSubmit={handleSubmit}>
           <Input
             value={info.email}
             type={"email"}
@@ -102,8 +113,8 @@ function LoginPage() {
               setInfo({ ...info, password: e.target.value });
             }}
           />
-          <Button text={"시작하기"} onClick={hadndleLogin} />
-        </div>
+          <Button type={"submit"} text={"시작하기"} />
+        </form>
         <div className="mt-9 flex w-full justify-center">
           <div className="flex w-70 justify-between text-[12px]">
             <SubText>비밀번호를 잊으셨나요?</SubText>|

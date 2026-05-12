@@ -71,7 +71,6 @@ const NavBar = () => {
 
   const handleLogout = () => {
     clearSession();
-    window.localStorage.removeItem("ecampus.auth.session");
     navigate("/auth/login", { replace: true });
   };
 
