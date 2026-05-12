@@ -6,14 +6,16 @@ import { getDefaultRouteByRole, useAuthSessionStore } from "@auth/stores";
 
 interface InputProps {
   value: string;
+  type: string;
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input = ({ value, placeholder, onChange }: InputProps) => {
+const Input = ({ value, type, placeholder, onChange }: InputProps) => {
   return (
     <input
       value={value}
+      type={type}
       placeholder={placeholder}
       onChange={onChange}
       className="w-full rounded-2xl border border-[#eaeaea] px-7 py-4"
@@ -33,7 +35,11 @@ const Button = ({ text, onClick }: { text: string; onClick: () => void }) => {
 };
 
 const SubText = ({ children }: { children: React.ReactNode }) => {
-  return <p className="text-ec-black text-[13px] font-normal">{children}</p>;
+  return (
+    <p className="text-ec-black cursor-pointer text-[13px] font-normal">
+      {children}
+    </p>
+  );
 };
 
 function LoginPage() {
@@ -54,7 +60,8 @@ function LoginPage() {
 
       if (!loginResponse) {
         window.alert(
-          response.data?.error?.message ?? "로그인에 실패했습니다. 다시 시도해주세요.",
+          response.data?.error?.message ??
+            "로그인에 실패했습니다. 다시 시도해주세요.",
         );
         return;
       }
@@ -81,6 +88,7 @@ function LoginPage() {
         <div className="mt-10 flex flex-col gap-2">
           <Input
             value={info.email}
+            type={"email"}
             placeholder={"이메일 주소"}
             onChange={(e) => {
               setInfo({ ...info, email: e.target.value });
@@ -88,6 +96,7 @@ function LoginPage() {
           />
           <Input
             value={info.password}
+            type={"password"}
             placeholder={"비밀번호"}
             onChange={(e) => {
               setInfo({ ...info, password: e.target.value });
