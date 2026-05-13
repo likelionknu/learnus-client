@@ -81,7 +81,7 @@ const NavBar = () => {
           <img
             src={NavLogo}
             alt="NavLogo"
-            className="h-9 w-6 cursor-pointer"
+            className="h-9 w-8 cursor-pointer"
             onClick={() => {
               navigate("/user/dashboard");
             }}
